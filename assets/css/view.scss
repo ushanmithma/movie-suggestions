@@ -1,0 +1,103 @@
+
+@import './variables';
+@import './media-queries';
+
+* {
+	font-family: $primary-font;
+}
+
+main {
+
+	section	{
+
+		article {
+			background: $light-color;
+			overflow: auto;
+
+			.movie {
+				width: 90%;
+				margin: 16px;
+
+				@include mq ($medium) {
+					width: 576px;
+					margin: 0 auto;
+				}
+
+				@include mq ($large) {
+					width: 768px;
+				}
+
+				.view {
+					width: 100%;
+					margin: 16px 0;
+
+					h1 {
+						font-size: 2rem;
+						line-height: 120%;
+						padding: 16px 0;
+					}
+
+					span {
+						font-size: 1rem;
+					}
+				}
+
+				.update {
+					width: 100%;
+					margin: 32px 0;
+
+					a {
+						text-decoration: none;
+						padding: 8px 16px;
+						background: $primary-color;
+						font-weight: bold;
+						color: $light-color;
+						letter-spacing: 1px;
+						transition: background 0.3s ease-in-out;
+						border-radius: 5px;
+
+						&:hover {
+							background: $secondary-color;
+						}
+					}
+				}
+
+				.related {
+					width: 100%;
+					margin: 16px 0;
+
+					h1 {
+						font-size: 1.5rem;
+						margin-bottom: 20px;
+					}
+
+					h2 {
+						font-size: 1.2rem;
+						margin-bottom: 20px;
+					}
+
+					ul {
+						list-style: none;
+						margin: 24px 0;
+
+						li {
+							margin: 8px 0;
+							font-size: 1rem;
+
+							a {
+								display: inline-block;
+								text-decoration: none;
+								padding: 8px 0;
+								transition: all 0.3s ease;
+
+								&:hover {
+									text-decoration: underline;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+
+RewriteEngine On
+
+# RewriteRule ^movie/add$ movie.php [NC,L]
+# RewriteRule ^movie/([0-9]+)/([0-9a-zA-Z_-]+) movie.php?id=$1&name=$2 [NC,L]
+
+RewriteCond %[REQUEST_FILENAME] !-d
+RewriteCond %[REQUEST_FILENAME]\.php -f
+RewriteRule ^movie/([0-9]+) assets/includes/view-movie.php?id=$1 [NC,L]
+
+# Disabling Directory Browse
+Options -Indexes
+
+# Custom Error Page
+# ErrorDocument 404 ./suggest/404.php

@@ -1,0 +1,79 @@
+
+@import './variables';
+@import './media-queries';
+
+* {
+	font-family: $primary-font;
+}
+
+main {
+
+	section {
+
+		article {
+
+			.pagination {
+				width: 100%;
+				overflow: auto;
+				background-color: $light-color;
+
+				#pagination-data {
+					width: 90%;
+					margin: 16px auto;
+
+					.table_content {
+						overflow-x: auto;
+
+						table {
+							border-collapse: collapse;
+							border-spacing: 0;
+							width: 100vh;
+
+							@include mq ($medium) {
+								width: 100%;
+							}
+
+							tr th {
+								background-color: $primary-color;
+								color: $light-color;
+							}
+
+							th, td {
+								text-align: left;
+								padding: 8px;
+							}
+
+							tr:nth-child(even){background-color: #bdd6fc;}
+						}
+					}
+
+					.pagination_controller {
+						width: 100%;
+						margin: 16px 0;
+						text-align: center;
+
+						a {
+							text-decoration: none;
+							color: $dark-color;
+							font-weight: bold;
+							display: inline-block;
+							margin: 0 8px;
+							padding: 12px 0;
+
+							&:hover {
+								color: $primary-color;
+								text-decoration: underline;
+							}
+						}
+
+						span {
+							margin: 0 8px;
+							display: inline-block;
+						}
+					}
+
+				}
+			}
+		}
+	}
+}
